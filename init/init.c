@@ -598,7 +598,11 @@ static int console_init_action(int nargs, char **args)
         have_console = 1;
     close(fd);
 
+#ifdef ALLWINNER
+    if( load_argb8888_image(INIT_IMAGE_FILE) ) {
+#else
     if( load_565rle_image(INIT_IMAGE_FILE) ) {
+#endif
         fd = open("/dev/tty0", O_WRONLY);
         if (fd >= 0) {
             const char *msg;

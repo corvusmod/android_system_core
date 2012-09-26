@@ -80,6 +80,18 @@ err:
     return ret;
 }
 
+#ifdef ALLWINNER
+
+static int autosuspend_earlysuspend_enable(void){
+  return 0;
+}
+
+static int autosuspend_earlysuspend_disable(void){
+  return 0;
+} */
+
+#endif
+
 struct autosuspend_ops autosuspend_earlysuspend_ops = {
         .enable = autosuspend_earlysuspend_enable,
         .disable = autosuspend_earlysuspend_disable,

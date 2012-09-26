@@ -9,6 +9,9 @@ int do_domainname(int nargs, char **args);
 int do_exec(int nargs, char **args);
 int do_export(int nargs, char **args);
 int do_export_rc(int nargs, char **args);
+#ifdef ALLWINNER
+int do_format_userdata(int nargs, char **args)
+#endif
 int do_hostname(int nargs, char **args);
 int do_ifup(int nargs, char **args);
 int do_insmod(int nargs, char **args);
@@ -26,9 +29,15 @@ int do_setkey(int nargs, char **args);
 int do_setprop(int nargs, char **args);
 int do_setrlimit(int nargs, char **args);
 int do_setsebool(int nargs, char **args);
+#ifdef ALLWINNER
+int do_setupfs(int nargs, char **args);
+#endif
 int do_start(int nargs, char **args);
 int do_stop(int nargs, char **args);
 int do_trigger(int nargs, char **args);
+#ifdef ALLWINNER
+int do_umount(int nargs, char **args);
+#endif
 int do_symlink(int nargs, char **args);
 int do_sysclktz(int nargs, char **args);
 int do_write(int nargs, char **args);
@@ -57,6 +66,9 @@ enum {
     KEYWORD(exec,        COMMAND, 1, do_exec)
     KEYWORD(export,      COMMAND, 2, do_export)
     KEYWORD(export_rc,   COMMAND, 1, do_export_rc)
+#ifdef ALLWINNER
+    KEYWORD(format_userdata,COMMAND, 1, do_format_userdata)
+#endif
     KEYWORD(group,       OPTION,  0, 0)
     KEYWORD(hostname,    COMMAND, 1, do_hostname)
     KEYWORD(ifup,        COMMAND, 1, do_ifup)
@@ -83,10 +95,16 @@ enum {
     KEYWORD(setprop,     COMMAND, 2, do_setprop)
     KEYWORD(setrlimit,   COMMAND, 3, do_setrlimit)
     KEYWORD(setsebool,   COMMAND, 1, do_setsebool)
+#ifdef ALLWINNER
+    KEYWORD(setupfs,     COMMAND, 1, do_setupfs)
+#endif
     KEYWORD(socket,      OPTION,  0, 0)
     KEYWORD(start,       COMMAND, 1, do_start)
     KEYWORD(stop,        COMMAND, 1, do_stop)
     KEYWORD(trigger,     COMMAND, 1, do_trigger)
+#ifdef ALLWINNER
+    KEYWORD(format_userdata,COMMAND, 1, do_format_userdata)
+#endif
     KEYWORD(symlink,     COMMAND, 1, do_symlink)
     KEYWORD(sysclktz,    COMMAND, 1, do_sysclktz)
     KEYWORD(user,        OPTION,  0, 0)

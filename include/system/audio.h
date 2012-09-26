@@ -72,6 +72,11 @@ typedef enum {
     AUDIO_SOURCE_FM_RX_A2DP          = 9,
 #endif
 
+#ifdef ALLWINNER
+    AUDIO_SOURCE_AF                 = 8,
+#endif
+
+
     AUDIO_SOURCE_CNT,
     AUDIO_SOURCE_MAX                 = AUDIO_SOURCE_CNT - 1,
 } audio_source_t;
@@ -416,6 +421,9 @@ typedef enum {
     AUDIO_DEVICE_IN_AUX_DIGITAL           = 0x200000,
     AUDIO_DEVICE_IN_VOICE_CALL            = 0x400000,
     AUDIO_DEVICE_IN_BACK_MIC              = 0x800000,
+#ifdef ALLWINNER
+    AUDIO_DEVICE_IN_AF                   = 0x1000000,
+#endif
     AUDIO_DEVICE_IN_DEFAULT               = 0x80000000,
 #endif
 
@@ -433,6 +441,9 @@ typedef enum {
 #endif
 #ifdef QCOM_HARDWARE
                                AUDIO_DEVICE_IN_PROXY |
+#endif
+#ifdef ALLWINNER
+			       AUDIO_DEVICE_IN_AF |
 #endif
                                AUDIO_DEVICE_IN_DEFAULT),
     AUDIO_DEVICE_IN_ALL_SCO = AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET,

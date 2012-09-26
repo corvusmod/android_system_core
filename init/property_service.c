@@ -91,6 +91,9 @@ struct {
     { "persist.service.", AID_SYSTEM,   0 },
     { "persist.service.", AID_RADIO,    0 },
     { "persist.security.",AID_SYSTEM,   0 },
+#ifdef ALLWINNER
+    { "audio.routing",    AID_MEDIA,    0 },
+#endif
     { "net.pdp",          AID_RADIO,    AID_RADIO },
     { NULL, 0, 0 }
 };
