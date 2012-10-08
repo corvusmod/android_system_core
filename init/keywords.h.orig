@@ -10,7 +10,7 @@ int do_exec(int nargs, char **args);
 int do_export(int nargs, char **args);
 int do_export_rc(int nargs, char **args);
 #ifdef ALLWINNER
-int do_format_userdata(int nargs, char **args);
+int do_format_userdata(int nargs, char **args)
 #endif
 int do_hostname(int nargs, char **args);
 int do_ifup(int nargs, char **args);
@@ -79,9 +79,6 @@ enum {
     KEYWORD(mkdir,       COMMAND, 1, do_mkdir)
     KEYWORD(mount_all,   COMMAND, 1, do_mount_all)
     KEYWORD(mount,       COMMAND, 3, do_mount)
-#ifdef ALLWINNER    
-    KEYWORD(umount, COMMAND, 1, do_umount)
-#endif
     KEYWORD(on,          SECTION, 0, 0)
     KEYWORD(oneshot,     OPTION,  0, 0)
     KEYWORD(onrestart,   OPTION,  0, 0)
