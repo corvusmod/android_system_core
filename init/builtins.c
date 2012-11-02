@@ -608,7 +608,6 @@ int do_setenforce(int nargs, char **args) {
 }
 
 #ifdef ALLWINNER
-
 int do_umount(int nargs, char **args)
 {
 	ERROR("do_umount: %s \n", args[1]);
@@ -619,7 +618,6 @@ int do_umount(int nargs, char **args)
 	} 
 	return 0;
 }
-
 #endif
 
 int do_setkey(int nargs, char **args)
@@ -917,7 +915,6 @@ int do_wait(int nargs, char **args)
 }
 
 #ifdef ALLWINNER
-
 /* setupfs, format a device to ext4 */
 const char *mkfs = "/system/bin/make_ext4fs";
 
@@ -1026,5 +1023,4 @@ int do_format_userdata(int argc, char **argv)
    		return 1;
 	}
 }
-
 #endif

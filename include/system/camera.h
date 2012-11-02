@@ -185,7 +185,6 @@ enum {
      * can silently finish itself or show a dialog.
      */
     CAMERA_CMD_PING = 9,
-
 #ifdef ALLWINNER
     CAMERA_CMD_SET_SCREEN_ID = 0xFF000000,
     CAMERA_CMD_SET_CEDARX_RECORDER = 0xFF000001,

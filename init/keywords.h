@@ -79,8 +79,8 @@ enum {
     KEYWORD(mkdir,       COMMAND, 1, do_mkdir)
     KEYWORD(mount_all,   COMMAND, 1, do_mount_all)
     KEYWORD(mount,       COMMAND, 3, do_mount)
-#ifdef ALLWINNER    
-    KEYWORD(umount, COMMAND, 1, do_umount)
+#ifdef ALLWINNER
+	KEYWORD(umount,      COMMAND, 1, do_umount)
 #endif
     KEYWORD(on,          SECTION, 0, 0)
     KEYWORD(oneshot,     OPTION,  0, 0)

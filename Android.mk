@@ -18,5 +18,5 @@ LOCAL_PATH := $(my-dir)
 include $(call first-makefiles-under,$(LOCAL_PATH))
 
 ifeq ($(TARGET_BOARD_PLATFORM),exDroid)
-LOCAL_CFLAGS += -DALLWINNER 
+	LOCAL_CFLAGS += -DALLWINNER 
 endif

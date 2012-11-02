@@ -168,7 +168,6 @@ fail_restore_text:
 }
 
 #ifdef ALLWINNER
-
 int load_argb8888_image(char *fn)
 {
     struct FB fb;
@@ -267,5 +266,4 @@ fail_restore_text:
     vt_set_mode(0);
     return -1;
 }
-
 #endif
